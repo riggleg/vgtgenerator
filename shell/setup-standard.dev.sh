@@ -1,5 +1,5 @@
-echo "create database joomla3_zhen CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -uroot -pyikes3479
-mysql -u root -pyikes3479 joomla_standard < /jgenerator1_setup/joomla3_zhen.sql
+echo "create database joomla_standard CHARACTER SET utf8 COLLATE utf8_general_ci;" | mysql -uroot -pyikes3479
+mysql -u root -pyikes3479 joomla_standard < /jgenerator1_setup/joomla_standard.sql
 
 sudo usermod -a -G www-data vagrant
 

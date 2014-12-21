@@ -80,6 +80,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, :path => "shell/jgenerator.sh",  :args => "", privileged: false
 #  config.vm.provision :shell, :path => "shell/setup-drhespa.j3.sh",  :args => "", privileged: false
   config.vm.provision :shell, :path => "shell/setup-standard.dev.sh",  :args => "", privileged: false
+  config.vm.provision :shell, :inline => "echo -e '#{File.read("#{Dir.home}/.ssh/id_rsa")}' > '/home/vagrant/.ssh/id_rsa'"
 
   # config.vm.provision "cfengine" do |cf|
   #   cf.am_policy_hub = true

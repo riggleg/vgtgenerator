@@ -12,3 +12,5 @@ apt-get install git -y
 echo "Install libs needed for nokogiri"
 apt-get install libxslt-dev libxml2-dev -y
 
+echo "Install libs for tidy"
+apt-get install libtidy-dev tidy -y

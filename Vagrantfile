@@ -21,6 +21,8 @@ Vagrant.configure(2) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network "forwarded_port", guest: 80, host: 18080
+  config.vm.network "forwarded_port", guest: 8808, host: 18808
+
   if Vagrant.has_plugin?("vagrant-cachier")
     # Configure cached packages to be shared between instances of the same base box.
     # More info on the "Usage" link above
@@ -67,10 +69,12 @@ Vagrant.configure(2) do |config|
   # automatically installed. For example, configure the host as a
   # policy server and optionally a policy file to run:
   #
-  config.vm.synced_folder "~/Dropbox/RubyProjects/JGenerator", "/home/vagrant/Dropbox/RubyProjects/JGenerator"
+#  config.vm.synced_folder "~/Dropbox/RubyProjects/JGenerator", "/home/vagrant/Dropbox/RubyProjects/JGenerator"
 #  config.vm.synced_folder "~/Dropbox/RubyProjects/JGenerator3", "/home/vagrant/Dropbox/RubyProjects/JGenerator3"
-  config.vm.synced_folder "~/Dropbox/Projects", "/home/vagrant/Dropbox/Projects"
+  config.vm.synced_folder "~/Dropbox", "/home/vagrant/Dropbox"
+#  config.vm.synced_folder "~/Dropbox/Live Projects", "/home/vagrant/Dropbox/Live Projects"
   config.vm.synced_folder "~/Dropbox/vagrant_setup/jgenerator1", "/jgenerator1_setup"
+#  config.vm.synced_folder "vhosts/", "/var/www/vhosts", create: true
 #  config.vm.synced_folder "~/Dropbox/vagrant_setup/jgenerator3", "/jgenerator3_setup"
   config.vm.provision :shell, :path => "shell/initial.sh",  :args => "stable", privileged: true
   config.vm.provision :shell, :path => "shell/install-rvm.sh",  :args => "stable", privileged: false

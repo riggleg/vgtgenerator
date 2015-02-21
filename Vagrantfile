@@ -74,6 +74,7 @@ Vagrant.configure(2) do |config|
   config.vm.synced_folder "~/Dropbox", "/home/vagrant/Dropbox"
 #  config.vm.synced_folder "~/Dropbox/Live Projects", "/home/vagrant/Dropbox/Live Projects"
   config.vm.synced_folder "~/Dropbox/vagrant_setup/jgenerator1", "/jgenerator1_setup"
+  config.vm.synced_folder "~/Dropbox/vagrant_setup/jgenerator1_misc", "/jgenerator1_misc"
 #  config.vm.synced_folder "vhosts/", "/var/www/vhosts", create: true
 #  config.vm.synced_folder "~/Dropbox/vagrant_setup/jgenerator3", "/jgenerator3_setup"
   config.vm.provision :shell, :path => "shell/initial.sh",  :args => "stable", privileged: true

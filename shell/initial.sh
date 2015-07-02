@@ -14,3 +14,6 @@ apt-get install libxslt-dev libxml2-dev -y
 
 echo "Install libs for tidy"
 apt-get install libtidy-dev tidy -y
+
+echo "Install highlight, like grep but just highlights found words"
+apt-get install highlight -y

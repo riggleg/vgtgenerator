@@ -58,7 +58,7 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.customize ["modifyvm", :id, "--memory", "1536"]
     vb.name = "VGTGenerator"
    end
   #
@@ -86,6 +86,7 @@ Vagrant.configure(2) do |config|
 #  config.vm.provision :shell, :path => "shell/setup-drhespa.j3.sh",  :args => "", privileged: false
   config.vm.provision :shell, :path => "shell/setup-standard.dev.sh",  :args => "", privileged: false
   config.vm.provision :shell, :inline => "echo -e '#{File.read("#{Dir.home}/.ssh/id_rsa")}' > '/home/vagrant/.ssh/id_rsa'"
+  config.vm.provision :shell, :path => "shell/post-install.sh",  :args => "", privileged: false
 
   # config.vm.provision "cfengine" do |cf|
   #   cf.am_policy_hub = true
